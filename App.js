@@ -1,14 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 
-export default function App() {
+import React from 'react';
+import SvgLineChart from './src/components/SvgChart';
+import FancyLineChart from './src/components/FancyLineChart';
+import InteractiveChart from './src/components/InteractiveChart';
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <View>
+        <SvgLineChart />
+      </View>
+      <View>
+        <FancyLineChart />
+      </View>
+      <ScrollView>
+        <InteractiveChart />
+      </ScrollView>
     </View>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
